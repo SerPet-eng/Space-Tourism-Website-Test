@@ -1,0 +1,35 @@
+@use '../../variables/variables.scss' as *;
+
+.not-found {
+  margin: 0 10rem 2rem 10rem;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  color: white;
+
+  .not-found-hero {
+    .not-found-title {
+      @include Bellfair_Regular;
+      font-size: 10rem;
+      line-height: 8rem;
+    }
+
+    .not-found-text {
+      @include Bellfair_Regular;
+      text-transform: uppercase;
+      font-size: 2rem;
+    }
+  }
+
+  .not-found-content {
+    width: 300px;
+    .not-found-description {
+      @include Barlow_Thin;
+      font-size: 1.25rem;
+    }
+  }
+}

@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import Destination from './components/Destination/Destination';
 import Technology from './components/Technology/Technology';
 import Crew from './components/Crew/Crew';
+import NotFound from './components/Error/NotFound';
 import { usePageContext } from './utils/PageContext';
 
 export default function App() {
@@ -17,19 +18,7 @@ export default function App() {
     <>
       <div className="app">
         <Navbar />
-
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          technology.length > 0 && (
-            <Technology
-              img_portrait={technology[0].images.portrait}
-              img_landscape={technology[0].images.landscape}
-              name={technology[0].name}
-              description={technology[0].description}
-            />
-          )
-        )}
+        <NotFound />
       </div>
 
       <div className="components" style={{ display: 'none' }}>
@@ -56,6 +45,19 @@ export default function App() {
               name={crew[0].name}
               role={crew[0].role}
               bio={crew[0].bio}
+            />
+          )
+        )}
+
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          technology.length > 0 && (
+            <Technology
+              img_portrait={technology[0].images.portrait}
+              img_landscape={technology[0].images.landscape}
+              name={technology[0].name}
+              description={technology[0].description}
             />
           )
         )}
