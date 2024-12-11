@@ -1,0 +1,34 @@
+@use '../../variables/variables.scss' as *;
+
+.home {
+  color: $neutral_White-900;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 14rem 8rem 1rem 8rem;
+
+  .home-description {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 540px;
+    .home-text {
+      @include Barlow_Light;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 1.75rem;
+      color: $primary_Blue-300;
+    }
+    .home-title {
+      @include Bellfair_Regular;
+      text-transform: uppercase;
+      font-size: 9rem;
+    }
+    .home-paragraph {
+      @include Barlow_Light;
+      color: $primary_Blue-300;
+      font-size: 1rem;
+    }
+  }
+}

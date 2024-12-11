@@ -1,0 +1,16 @@
+@media only screen and (max-width: 1060px) {
+  .small-pagination {
+    margin-top: 0;
+    .small-pagination-list {
+      .small-pagination-item {
+        width: 0.5rem;
+        height: 0.5rem;
+
+        background-color: hsla(0, 0%, 100%, 0.17);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+}

@@ -1,0 +1,22 @@
+@use '../variables/variables.scss' as *;
+
+.button {
+  padding: 8rem 5rem;
+  border: none;
+  border-radius: 50%;
+  color: $primary_Blue-900;
+  @include Bellfair_Regular;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    outline: 88px solid $primary_Blue-900;
+    color: $primary_Blue-300;
+  }
+  .button-text {
+    font-size: 2rem;
+
+    text-transform: uppercase;
+  }
+}

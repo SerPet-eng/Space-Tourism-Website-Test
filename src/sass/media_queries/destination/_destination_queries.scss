@@ -1,0 +1,65 @@
+@media only screen and (max-width: 1060px) {
+  .destination {
+    .destination-content {
+      flex-direction: column;
+
+      .destination-image-container {
+        .destination-image {
+          width: 70%;
+        }
+      }
+
+      .destination-explanation-container {
+        text-align: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .destination {
+    padding: 2rem;
+    margin: auto;
+    text-align: center;
+    .destination-content {
+      flex-direction: column;
+
+      .destination-image-container {
+        margin: 1.5rem auto;
+        width: auto;
+        height: auto;
+        .destination-image {
+          width: 50%;
+        }
+      }
+
+      .destination-explanation-container {
+        width: auto;
+        height: auto;
+
+        .destination-text {
+          .destination-name {
+            font-size: 3.5rem;
+          }
+
+          .destination-description {
+            font-size: 0.9rem;
+          }
+        }
+
+        .destination-statistics {
+          flex-direction: column;
+          .destination-info {
+            .destination-info-title {
+              font-size: 0.8rem;
+            }
+            .destination-info-hero {
+              font-size: 1.75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

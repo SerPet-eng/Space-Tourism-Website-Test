@@ -1,0 +1,101 @@
+body {
+  background-color: black;
+  overflow-x: hidden;
+}
+
+@keyframes slide-In {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.nav {
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 2rem;
+
+  font-family: 'Barlow', sans-serif;
+
+  .nav-hero {
+    display: flex;
+    align-items: center;
+
+    width: 55%;
+
+    position: relative;
+    z-index: 99;
+
+    .nav-line {
+      display: block;
+      margin-left: 5rem;
+      background-color: white;
+      height: 1px;
+      width: 100%;
+    }
+
+    .nav-hamburger {
+      display: none;
+    }
+  }
+
+  .nav-menu {
+    background-color: hsla(0, 0%, 100%, 0.212);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    list-style: none;
+    padding: 2rem;
+
+    min-width: 50%; /* Adjust as needed for your design */
+
+    position: absolute;
+    right: 0;
+
+    z-index: 1;
+
+    transition: all 0.3s ease-in-out;
+    .nav-item {
+      color: white;
+      font-size: 16px;
+
+      position: relative;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .nav-menu-close {
+      display: none;
+    }
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+
+  .close {
+    transform: translateX(100%);
+  }
+}
+
+.active {
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -33px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: red;
+
+    animation: slide-In 0.3s ease-in-out forwards;
+  }
+}

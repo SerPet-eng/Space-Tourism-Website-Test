@@ -1,0 +1,34 @@
+@use '../variables/variables.scss' as *;
+
+.pagination-container {
+  height: 304px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: $spacing_200;
+  padding: 0;
+  list-style: none;
+
+  .pagination-item {
+    width: 4.5rem; /* Fixed width for perfect circles */
+    height: 4.5rem; /* Fixed height for perfect circles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+
+    @include Bellfair_Regular;
+    color: $neutral_White-900;
+    border: 1px solid $primary_Blue-300;
+    border-radius: 50%; /* Circular shape */
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+
+    &.active-paginate {
+      background-color: $neutral_White-900;
+      color: $primary_Blue-900 !important; /* Ensure styles are applied */
+    }
+  }
+}

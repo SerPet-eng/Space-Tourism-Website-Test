@@ -1,0 +1,29 @@
+@use '../variables/variables.scss' as *;
+
+.small-pagination {
+  margin-top: auto;
+
+  .small-pagination-list {
+    display: flex;
+    justify-content: start;
+    gap: 1.25rem;
+    padding: 0;
+    .small-pagination-item {
+      width: 0.7rem;
+      height: 0.7rem;
+      list-style-type: none;
+
+      border-radius: 30px;
+      background-color: hsla(0, 0%, 100%, 0.17);
+
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.small-pagination-active {
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: $neutral_White-900 !important;
+}

@@ -1,0 +1,21 @@
+@media only screen and (max-width: 1060px) {
+  .pagination-container {
+    flex-direction: row;
+    height: auto;
+    .pagination-item {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .pagination-container {
+    .pagination-item {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+    }
+  }
+}

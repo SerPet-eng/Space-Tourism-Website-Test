@@ -1,0 +1,53 @@
+@use '../../variables/variables.scss' as *;
+
+.technology {
+  margin: 1rem 0 1rem 12rem;
+  color: white;
+  .pages-title {
+    @include Barlow_Light;
+    text-transform: uppercase;
+    color: white;
+
+    span {
+      @include Barlow_Bold;
+      color: $primary_Blue-900;
+      margin-right: 1.5rem;
+    }
+  }
+
+  .technology-content {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 2rem;
+    .technology-explanation-container {
+      width: 635px;
+      height: 304px;
+      border: 1px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      .technology-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .technology-rank-name {
+          .technology-rank {
+            @include Bellfair_Regular;
+            font-size: 2rem;
+            text-transform: uppercase;
+          }
+          .technology-name {
+            @include Bellfair_Regular;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+          }
+        }
+        .technology-description {
+          @include Barlow_Thin;
+        }
+      }
+    }
+  }
+}

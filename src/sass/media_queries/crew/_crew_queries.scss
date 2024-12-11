@@ -1,0 +1,51 @@
+@media only screen and (max-width: 1060px) {
+  .crew {
+    .crew-content {
+      flex-direction: column;
+      .crew-explanation-container {
+        text-align: center;
+        align-items: center;
+      }
+
+      .crew-explanation-container {
+        width: 480px;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .crew {
+    padding: 2rem;
+    margin: auto;
+    text-align: center;
+    .crew-content {
+      .crew-explanation-container {
+        width: auto;
+        height: auto;
+
+        .crew-text {
+          margin: 2rem auto;
+          gap: 0.5rem;
+          .crew-rank {
+            font-size: 1.125rem;
+          }
+          .crew-name {
+            font-size: 1.5rem;
+          }
+          .crew-bio {
+            font-size: 0.9rem;
+          }
+        }
+      }
+      .crew-image-container {
+        width: auto;
+        height: auto;
+        .crew-image {
+          width: 60%;
+        }
+      }
+    }
+  }
+}

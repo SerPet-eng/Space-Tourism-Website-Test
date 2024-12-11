@@ -1,0 +1,113 @@
+@mixin Barlow_Thin {
+  font-family: 'Barlow', serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+@mixin Barlow_Extralight {
+  font-family: 'Barlow', serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@mixin Barlow_Light {
+  font-family: 'Barlow', serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin Barlow_Regular {
+  font-family: 'Barlow', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin Barlow_Medium {
+  font-family: 'Barlow', serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin Barlow_SemiBold {
+  font-family: 'Barlow', serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin Barlow_Bold {
+  font-family: 'Barlow', serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin Barlow_ExtraBold {
+  font-family: 'Barlow', serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+@mixin Barlow_Black {
+  font-family: 'Barlow', serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+@mixin Barlow_Thin-Italic {
+  font-family: 'Barlow', serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+@mixin Barlow_ExtraLight-Italic {
+  font-family: 'Barlow', serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+@mixin Barlow_Light-Italic {
+  font-family: 'Barlow', serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+@mixin Barlow_Regular-Italic {
+  font-family: 'Barlow', serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@mixin Barlow_Medium-Italic {
+  font-family: 'Barlow', serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+@mixin Barlow_SemiBold-Italic {
+  font-family: 'Barlow', serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+@mixin Barlow_Bold-Italic {
+  font-family: 'Barlow', serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@mixin Barlow_ExtraBold-Italic {
+  font-family: 'Barlow', serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+@mixin Barlow_Black-Italic {
+  font-family: 'Barlow', serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+@mixin Bellfair_Regular {
+  font-family: 'Bellefair', serif;
+  font-weight: 400;
+  font-style: normal;
+}
