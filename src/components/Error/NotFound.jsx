@@ -21,6 +21,13 @@ export default function NotFound() {
           Hubble Telescope can see the deepest images of the universe, but not
           this page you are looking for.
         </p>
+        <p className="not-found-direction">
+          We can still go back crew to our Earth called &quot;
+          <a className="not-found-back" href="*">
+            Home
+          </a>
+          &quot;
+        </p>
       </div>
     </div>
   );

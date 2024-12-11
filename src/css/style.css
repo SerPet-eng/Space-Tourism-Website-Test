@@ -785,7 +785,6 @@ body {
 }
 .not-found {
   margin: 0 10rem 2rem 10rem;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -806,12 +805,22 @@ body {
   text-transform: uppercase;
   font-size: 2rem;
 }
-.not-found .not-found-content {
-  width: 300px;
-}
 .not-found .not-found-content .not-found-description {
   font-family: "Barlow", serif;
   font-weight: 100;
   font-style: normal;
+  color: hsl(231, 77%, 90%);
   font-size: 1.25rem;
+}
+.not-found .not-found-content .not-found-direction {
+  margin-top: 0.5rem;
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 650px) {
+  .not-found {
+    margin: auto;
+  }
 }/*# sourceMappingURL=style.css.map */
