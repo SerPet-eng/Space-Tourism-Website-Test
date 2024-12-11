@@ -27,3 +27,31 @@
     }
   }
 }
+
+@media only screen and (max-width: 650px) {
+  .technology {
+    .technology-content {
+      .technology-explanation-container {
+        gap: 2.5rem;
+        .technology-text {
+          .technology-rank-name {
+            .technology-rank {
+              font-size: 1.125rem;
+            }
+            .technology-name {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .technology-image-container {
+        .technology-image {
+          width: 768px;
+          height: 258px;
+          object-fit: fill;
+        }
+      }
+    }
+  }
+}

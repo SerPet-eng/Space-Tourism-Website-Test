@@ -26,7 +26,11 @@ export default function Technology({
         </div>
 
         <picture className="technology-image-container">
-          <source media="(max-width: 1060px)" srcSet={img_landscape} />
+          <source
+            media="(min-width: 561px) and (max-width: 1060px)"
+            srcSet={img_landscape}
+          />
+          <source media="(max-width: 56px)" srcSet={img_portrait} />
           <img
             className="technology-image"
             src={img_portrait}
