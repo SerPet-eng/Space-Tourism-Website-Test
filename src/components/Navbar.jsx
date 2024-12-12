@@ -79,22 +79,18 @@ export default function Navbar() {
               onClick={toggleSideBar}
             />
             {navItems.map((item, index) => (
-              <>
+              <li
+                key={index}
+                className={`nav-item ${activeIndex === index ? 'active' : ''}`}
+                onClick={() => setActiveIndex(index)}
+              >
                 <Link
                   to={getLinkPath(index)}
                   style={{ textDecoration: 'none' }}
                 >
-                  <li
-                    key={index}
-                    className={`nav-item ${
-                      activeIndex === index ? 'active' : ''
-                    }`}
-                    onClick={() => setActiveIndex(index)}
-                  >
-                    {item}
-                  </li>
+                  <p className="nav-item-text">{item}</p>
                 </Link>
-              </>
+              </li>
             ))}
           </ul>
         </nav>
