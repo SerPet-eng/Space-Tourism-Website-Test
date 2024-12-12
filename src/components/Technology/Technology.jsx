@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import Pagination from '../Pagination';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { useState } from 'react';
 
 export default function Technology({
   img_portrait,
@@ -7,6 +10,13 @@ export default function Technology({
   name,
   description,
 }) {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+    console.log('Image successfully load');
+  };
+
   return (
     <div className="technology">
       <p className="pages-title">
@@ -31,10 +41,14 @@ export default function Technology({
             srcSet={img_landscape}
           />
           <source media="(max-width: 56px)" srcSet={img_portrait} />
-          <img
+          {!isImageLoaded && <p>Loading image...</p>}
+          <LazyLoadImage
+            key={name}
             className="technology-image"
             src={img_portrait}
             alt={`Image of ${name}`}
+            effect="blur"
+            onLoad={handleImageLoad}
           />
         </picture>
       </div>

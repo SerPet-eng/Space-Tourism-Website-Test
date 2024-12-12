@@ -300,6 +300,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 4rem;
+  margin-right: auto;
 }
 .technology .technology-content .technology-explanation-container .technology-text {
   display: flex;

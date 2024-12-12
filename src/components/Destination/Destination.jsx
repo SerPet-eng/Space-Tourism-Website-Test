@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import DestinationTab from '../DestinationTab';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { useState } from 'react';
 
 export default function Destination({
   img,
@@ -8,6 +11,13 @@ export default function Destination({
   distance,
   travel,
 }) {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+    console.log('Image loaded successfully!');
+  };
+
   return (
     <div className="destination">
       <p className="pages-title">
@@ -15,10 +25,14 @@ export default function Destination({
       </p>
       <div className="destination-content">
         <div className="destination-image-container">
-          <img
+          {!isImageLoaded && <p>Loading image...</p>}
+          <LazyLoadImage
+            key={name}
             className="destination-image"
             src={img}
             alt={`Image of: ${name}`}
+            effect="blur"
+            onLoad={handleImageLoad}
           />
         </div>
 

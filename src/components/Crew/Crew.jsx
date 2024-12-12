@@ -1,7 +1,17 @@
 import PropTypes from 'prop-types';
 import SmallPagination from '../SmallPagination';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { useState } from 'react';
 
 export default function Crew({ img, name, role, bio }) {
+  const [isImageLoading, setIsImageLoading] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsImageLoading(true);
+    console.log('Image loaded successfully');
+  };
+
   return (
     <div className="crew">
       <p className="pages-title">
@@ -22,7 +32,15 @@ export default function Crew({ img, name, role, bio }) {
         </div>
 
         <div className="crew-image-container">
-          <img className="crew-image" src={img} alt={`Image of ${name}`} />
+          {!isImageLoading && <p>Loading image...</p>}
+          <LazyLoadImage
+            key={name}
+            className="crew-image"
+            src={img}
+            alt={`Image of ${name}`}
+            effect="blur"
+            onLoad={handleImageLoad}
+          />
         </div>
       </div>
     </div>
