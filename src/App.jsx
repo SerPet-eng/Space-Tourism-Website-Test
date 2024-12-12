@@ -1,3 +1,5 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import Button from './components/Button';
 import Pagination from './components/Pagination';
@@ -11,6 +13,8 @@ import Crew from './components/Crew/Crew';
 import NotFound from './components/Error/NotFound';
 import { usePageContext } from './utils/PageContext';
 
+import DestinationRoutes from './routes/DestinationRoutes';
+
 export default function App() {
   const { destinations, crew, technology, loading } = usePageContext();
 
@@ -18,10 +22,20 @@ export default function App() {
     <>
       <div className="app">
         <Navbar />
-        <NotFound />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/destination">
+            <Route index element={<Navigate to="moon" />} />
+            <Route path=":id" element={<DestinationRoutes />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
 
       <div className="components" style={{ display: 'none' }}>
+        <NotFound />
+
         {loading ? (
           <div>Loading...</div>
         ) : (

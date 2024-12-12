@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/icons/logo.svg';
 import IconHamburger from '../../assets/icons/icon-hamburger.svg';
 import IconClose from '../../assets/icons/icon-close.svg';
@@ -32,6 +33,21 @@ export default function Navbar() {
     setSideBarClicked((prevClicked) => !prevClicked);
   };
 
+  const getLinkPath = (index) => {
+    switch (index) {
+      case 0:
+        return '/';
+      case 1:
+        return '/destination';
+      case 2:
+        return 'crew';
+      case 3:
+        return 'technology';
+      default:
+        return '/';
+    }
+  };
+
   return (
     <>
       <div className="app">
@@ -63,13 +79,22 @@ export default function Navbar() {
               onClick={toggleSideBar}
             />
             {navItems.map((item, index) => (
-              <li
-                key={index}
-                className={`nav-item ${activeIndex === index ? 'active' : ''}`}
-                onClick={() => setActiveIndex(index)}
-              >
-                {item}
-              </li>
+              <>
+                <Link
+                  to={getLinkPath(index)}
+                  style={{ textDecoration: 'none' }}
+                >
+                  <li
+                    key={index}
+                    className={`nav-item ${
+                      activeIndex === index ? 'active' : ''
+                    }`}
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    {item}
+                  </li>
+                </Link>
+              </>
             ))}
           </ul>
         </nav>
