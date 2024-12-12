@@ -15,6 +15,7 @@ import { usePageContext } from './utils/PageContext';
 
 import DestinationRoutes from './routes/DestinationRoutes';
 import CrewRoutes from './routes/CrewRoutes';
+import TechnologyRoutes from './routes/TechnologyRoutes';
 
 export default function App() {
   const { destinations, crew, technology, loading } = usePageContext();
@@ -33,6 +34,10 @@ export default function App() {
           <Route path="/crew">
             <Route index element={<Navigate to="crew1" />} />
             <Route path=":id" element={<CrewRoutes />} />
+          </Route>
+          <Route path="/technology">
+            <Route index element={<Navigate to="technology1" />} />
+            <Route path=":id" element={<TechnologyRoutes />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

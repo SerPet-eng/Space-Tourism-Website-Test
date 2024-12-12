@@ -12,12 +12,6 @@ export default function CrewRoutes() {
     return <div style={{ color: 'white' }}>Crew not found</div>;
   }
 
-  if (crewIndex === -1) {
-    return <div style={{ color: 'white' }}>Crew not found</div>;
-  }
-
-  console.log(id);
-
   return (
     <>
       {loading ? (
