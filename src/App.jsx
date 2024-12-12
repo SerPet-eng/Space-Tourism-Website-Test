@@ -14,6 +14,7 @@ import NotFound from './components/Error/NotFound';
 import { usePageContext } from './utils/PageContext';
 
 import DestinationRoutes from './routes/DestinationRoutes';
+import CrewRoutes from './routes/CrewRoutes';
 
 export default function App() {
   const { destinations, crew, technology, loading } = usePageContext();
@@ -28,6 +29,10 @@ export default function App() {
           <Route path="/destination">
             <Route index element={<Navigate to="moon" />} />
             <Route path=":id" element={<DestinationRoutes />} />
+          </Route>
+          <Route path="/crew">
+            <Route index element={<Navigate to="crew1" />} />
+            <Route path=":id" element={<CrewRoutes />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

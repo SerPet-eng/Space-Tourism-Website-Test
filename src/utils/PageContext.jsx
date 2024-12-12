@@ -17,11 +17,11 @@ export default function PageContext({ children }) {
   const crew = data.crew || [];
   const technology = data.technology || []; // If data is still loading, return a loading indicator
 
-  if (destinations.length > 0 && crew.length > 0 && technology.length > 0) {
-    console.log('Its Working');
-  } else {
-    console.log('Loading...');
-  }
+  // if (destinations.length > 0 && crew.length > 0 && technology.length > 0) {
+  //   console.log('Its Working');
+  // } else {
+  //   console.log('Loading...');
+  // }
 
   if (loading) {
     return <div>Loading...</div>;
