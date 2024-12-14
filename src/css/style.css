@@ -290,8 +290,8 @@ body {
 .technology .technology-content {
   display: flex;
   align-items: center;
-  justify-content: end;
   gap: 2rem;
+  height: 556px;
 }
 .technology .technology-content .technology-explanation-container {
   width: 635px;
@@ -300,7 +300,6 @@ body {
   align-items: center;
   justify-content: center;
   gap: 4rem;
-  margin-right: auto;
 }
 .technology .technology-content .technology-explanation-container .technology-text {
   display: flex;
@@ -331,6 +330,31 @@ body {
   font-weight: 100;
   font-style: normal;
   color: hsl(231, 77%, 90%);
+}
+.technology .technology-content .technology-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 768px;
+  aspect-ratio: 3/1;
+  overflow: hidden;
+}
+.technology .technology-content .technology-image-container .technology-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+.technology .technology-content .technology-image-container.placeholder {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.technology .technology-content .technology-image-container.placeholder:before {
+  content: "Loading...";
+  font-size: 1rem;
+  color: #666;
 }
 
 .home {
@@ -405,6 +429,21 @@ body {
 }
 .destination .destination-content .destination-image-container .destination-image {
   width: 90%;
+  margin: 0 auto;
+}
+.destination .destination-content .destination-image-container .destination-image.placeholder {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.destination .destination-content .destination-image-container .destination-image.placeholder::before {
+  font-family: "Barlow", serif;
+  font-weight: 300;
+  font-style: normal;
+  content: "Loading...";
+  font-size: 1rem;
+  color: #666;
 }
 .destination .destination-content .destination-explanation-container {
   width: 480px;
@@ -519,6 +558,21 @@ body {
 }
 .crew .crew-content .crew-image-container .crew-image {
   width: 70%;
+  margin: 0 auto;
+}
+.crew .crew-content .crew-image-container.placeholder {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.crew .crew-content .crew-image-container.placeholder::before {
+  font-family: "Barlow", serif;
+  font-weight: 300;
+  font-style: normal;
+  content: "Loading...";
+  font-size: 1rem;
+  color: #666;
 }
 
 @media only screen and (max-width: 1060px) {
@@ -721,6 +775,7 @@ body {
   .technology .technology-content {
     justify-content: center;
     flex-direction: column-reverse;
+    height: auto;
   }
   .technology .technology-content .technology-explanation-container {
     width: auto;

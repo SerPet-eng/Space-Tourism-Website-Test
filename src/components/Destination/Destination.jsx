@@ -24,8 +24,11 @@ export default function Destination({
         <span>01</span>Pick your destination
       </p>
       <div className="destination-content">
-        <div className="destination-image-container">
-          {!isImageLoaded && <p>Loading image...</p>}
+        <div
+          className={`destination-image-container ${
+            !isImageLoaded ? 'placeholder' : ''
+          }`}
+        >
           <LazyLoadImage
             key={name}
             className="destination-image"

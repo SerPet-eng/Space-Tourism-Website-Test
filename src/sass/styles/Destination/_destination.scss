@@ -33,6 +33,20 @@
 
       .destination-image {
         width: 90%;
+        margin: 0 auto;
+
+        &.placeholder {
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &::before {
+            @include Barlow_Light;
+            content: 'Loading...';
+            font-size: 1rem;
+            color: #666;
+          }
+        }
       }
     }
 

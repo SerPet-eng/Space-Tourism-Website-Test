@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Pagination from '../Pagination';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Technology({
   img_portrait,
@@ -11,11 +11,31 @@ export default function Technology({
   description,
 }) {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [currentImage, setCurrentImage] = useState(img_portrait);
 
   const handleImageLoad = () => {
     setIsImageLoaded(true);
-    console.log('Image successfully load');
   };
+
+  useEffect(() => {
+    const updateImage = () => {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth <= 650) {
+        setCurrentImage(img_portrait);
+      } else if (screenWidth <= 1060) {
+        setCurrentImage(img_landscape);
+      } else {
+        setCurrentImage(img_portrait);
+      }
+    };
+
+    updateImage();
+
+    window.addEventListener('resize', updateImage);
+
+    return () => window.removeEventListener('resize', updateImage);
+  }, [img_portrait, img_landscape]);
 
   return (
     <div className="technology">
@@ -35,22 +55,20 @@ export default function Technology({
           </div>
         </div>
 
-        <picture className="technology-image-container">
-          <source
-            media="(min-width: 561px) and (max-width: 1060px)"
-            srcSet={img_landscape}
-          />
-          <source media="(max-width: 56px)" srcSet={img_portrait} />
-          {!isImageLoaded && <p>Loading image...</p>}
+        <div
+          className={`technology-image-container ${
+            !isImageLoaded ? 'placeholder' : ''
+          }`}
+        >
           <LazyLoadImage
             key={name}
             className="technology-image"
-            src={img_portrait}
+            src={currentImage}
             alt={`Image of ${name}`}
             effect="blur"
             onLoad={handleImageLoad}
           />
-        </picture>
+        </div>
       </div>
     </div>
   );

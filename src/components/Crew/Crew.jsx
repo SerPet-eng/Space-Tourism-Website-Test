@@ -31,8 +31,11 @@ export default function Crew({ img, name, role, bio }) {
           <SmallPagination />
         </div>
 
-        <div className="crew-image-container">
-          {!isImageLoading && <p>Loading image...</p>}
+        <div
+          className={`crew-image-container ${
+            !isImageLoading ? 'placeholder' : ''
+          }`}
+        >
           <LazyLoadImage
             key={name}
             className="crew-image"
