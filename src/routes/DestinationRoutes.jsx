@@ -1,5 +1,6 @@
 import { usePageContext } from '../utils/PageContext';
 import Destination from '../components/Destination/Destination';
+import LoadingState from '../components/LoadingState';
 import { useParams } from 'react-router-dom';
 
 export default function DestinationRoutes() {
@@ -13,7 +14,7 @@ export default function DestinationRoutes() {
 
   if (destinationIndex === -1) {
     // Handle the case where the destination is not found
-    return <div>Destination not found</div>;
+    return <LoadingState page="destination" />;
   }
 
   return (

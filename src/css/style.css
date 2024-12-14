@@ -880,4 +880,19 @@ body {
   .not-found {
     margin: auto;
   }
+}
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  text-align: center;
+  color: white;
+}
+.loading-state .loading-state-text {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=style.css.map */

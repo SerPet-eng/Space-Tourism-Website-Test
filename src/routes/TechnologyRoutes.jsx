@@ -1,5 +1,6 @@
 import { usePageContext } from '../utils/PageContext';
 import Technology from '../components/Technology/Technology';
+import LoadingState from '../components/LoadingState';
 import { useParams } from 'react-router-dom';
 
 export default function TechnologyRoutes() {
@@ -9,7 +10,7 @@ export default function TechnologyRoutes() {
   const technologyIndex = parseInt(id.replace('technology', ''), 10) - 1;
 
   if (technologyIndex < 0 || technologyIndex >= technology.length) {
-    return <div style={{ color: 'white' }}>Technology not found</div>;
+    return <LoadingState page="technology" />;
   }
   return (
     <>
