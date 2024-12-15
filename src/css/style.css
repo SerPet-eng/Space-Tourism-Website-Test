@@ -71,6 +71,7 @@ h6 {
 .app {
   overflow: hidden;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body {

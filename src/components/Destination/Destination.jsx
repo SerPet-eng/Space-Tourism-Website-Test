@@ -15,7 +15,6 @@ export default function Destination({
 
   const handleImageLoad = () => {
     setIsImageLoaded(true);
-    console.log('Image loaded successfully!');
   };
 
   return (

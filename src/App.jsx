@@ -15,8 +15,6 @@ import useBackgroundImage from './utils/useBackgroundImage';
 export default function App() {
   const { currentBackgroundImage } = useBackgroundImage();
 
-  console.log(currentBackgroundImage);
-
   return (
     <>
       <div className="app" style={{ backgroundImage: currentBackgroundImage }}>

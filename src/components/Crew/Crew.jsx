@@ -9,7 +9,6 @@ export default function Crew({ img, name, role, bio }) {
 
   const handleImageLoad = () => {
     setIsImageLoading(true);
-    console.log('Image loaded successfully');
   };
 
   return (
