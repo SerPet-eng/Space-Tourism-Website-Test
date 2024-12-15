@@ -10,10 +10,16 @@ import DestinationRoutes from './routes/DestinationRoutes';
 import CrewRoutes from './routes/CrewRoutes';
 import TechnologyRoutes from './routes/TechnologyRoutes';
 
+import useBackgroundImage from './utils/useBackgroundImage';
+
 export default function App() {
+  const { currentBackgroundImage } = useBackgroundImage();
+
+  console.log(currentBackgroundImage);
+
   return (
     <>
-      <div className="app">
+      <div className="app" style={{ backgroundImage: currentBackgroundImage }}>
         <Navbar />
 
         <Routes>

@@ -2,8 +2,9 @@
 
 .destination {
   margin: 1rem 10rem;
-
   color: white;
+
+  min-height: 80vh;
 
   .pages-title {
     @include Barlow_Light;
