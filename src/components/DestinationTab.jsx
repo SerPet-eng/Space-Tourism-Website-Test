@@ -26,22 +26,20 @@ export default function DestinationTab() {
       <div className="destination-section">
         <ul className="destination-list">
           {destinations.map((item, index) => (
-            <>
-              <Link
-                to={`/destination${getLinkPath(index)}`}
-                style={{ textDecoration: 'none' }}
+            <Link
+              to={`/destination${getLinkPath(index)}`}
+              style={{ textDecoration: 'none' }}
+              key={index}
+            >
+              <li
+                className={`destination-item ${
+                  activeIndex === index ? 'destination-item-active' : ''
+                }`}
+                onClick={() => setActiveIndex(index)}
               >
-                <li
-                  className={`destination-item ${
-                    activeIndex === index ? 'destination-item-active' : ''
-                  }`}
-                  key={index}
-                  onClick={() => setActiveIndex(index)}
-                >
-                  {item}
-                </li>
-              </Link>
-            </>
+                {item}
+              </li>
+            </Link>
           ))}
         </ul>
       </div>

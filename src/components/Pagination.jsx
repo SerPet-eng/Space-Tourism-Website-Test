@@ -23,22 +23,20 @@ export default function Pagination() {
       <div className="pagination">
         <ul className="pagination-container">
           {paginateNumbers.map((item, index) => (
-            <>
-              <Link
-                to={`/technology${getLinkPath(index)}`}
-                style={{ textDecoration: 'none' }}
+            <Link
+              to={`/technology${getLinkPath(index)}`}
+              style={{ textDecoration: 'none' }}
+              key={index}
+            >
+              <li
+                className={`pagination-item ${
+                  activePaginate === index ? 'active-paginate' : ''
+                }`}
+                onClick={() => setActivePaginate(index)}
               >
-                <li
-                  className={`pagination-item ${
-                    activePaginate === index ? 'active-paginate' : ''
-                  }`}
-                  key={index}
-                  onClick={() => setActivePaginate(index)}
-                >
-                  {item}
-                </li>
-              </Link>
-            </>
+                {item}
+              </li>
+            </Link>
           ))}
         </ul>
       </div>

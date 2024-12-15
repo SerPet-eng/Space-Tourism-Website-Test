@@ -26,22 +26,20 @@ export default function SmallPagination() {
       <div className="small-pagination">
         <ul className="small-pagination-list">
           {smallPagination.map((item, index) => (
-            <>
-              <Link
-                to={`/crew${getLinkPath(index)}`}
-                style={{ textDecoration: 'none', color: 'transparent' }}
+            <Link
+              to={`/crew${getLinkPath(index)}`}
+              style={{ textDecoration: 'none', color: 'transparent' }}
+              key={index}
+            >
+              <li
+                className={`small-pagination-item ${
+                  activeIndex === index ? 'small-pagination-active' : ''
+                }`}
+                onClick={() => setActiveIndex(index)}
               >
-                <li
-                  key={index}
-                  className={`small-pagination-item ${
-                    activeIndex === index ? 'small-pagination-active' : ''
-                  }`}
-                  onClick={() => setActiveIndex(index)}
-                >
-                  {item}
-                </li>
-              </Link>
-            </>
+                {item}
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
