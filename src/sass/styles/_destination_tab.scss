@@ -27,6 +27,18 @@
     color: $neutral_White-900;
 
     cursor: pointer;
+
+    &:hover::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      background-color: hsla(0, 0%, 100%, 0.397);
+
+      transition: all 0.3s ease-in-out;
+    }
   }
 }
 

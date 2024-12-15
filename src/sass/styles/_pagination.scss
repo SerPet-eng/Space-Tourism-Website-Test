@@ -26,6 +26,10 @@
 
     transition: all 0.3s ease-in-out;
 
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 0.397);
+    }
+
     &.active-paginate {
       background-color: $neutral_White-900;
       color: $primary_Blue-900 !important; /* Ensure styles are applied */

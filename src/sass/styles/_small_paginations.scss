@@ -18,6 +18,10 @@
 
       cursor: pointer;
       transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.397);
+      }
     }
   }
 }

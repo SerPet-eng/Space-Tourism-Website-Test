@@ -75,8 +75,8 @@ h6 {
 }
 
 body {
-  background-color: black;
   overflow-x: hidden;
+  background-color: hsl(230, 35%, 7%);
 }
 
 @keyframes slide-In {
@@ -105,7 +105,7 @@ body {
 .nav .nav-hero .nav-line {
   display: block;
   margin-left: 5rem;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   height: 1px;
   width: 100%;
 }
@@ -153,11 +153,12 @@ body {
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: red;
+  background-color: hsl(0, 0%, 100%);
   animation: slide-In 0.3s ease-in-out forwards;
 }
 
 .button {
+  box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.5), 0 -5px 10px hsla(0, 0%, 0%, 0.5), 5px 0 10px hsla(0, 0%, 0%, 0.5), -5px 0 10px hsla(0, 0%, 0%, 0.5);
   padding: 8rem 5rem;
   border: none;
   border-radius: 50%;
@@ -167,10 +168,10 @@ body {
   font-style: normal;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
 .button:hover {
-  outline: 88px solid hsl(230, 35%, 7%);
-  color: hsl(231, 77%, 90%);
+  outline: 80px solid hsla(0, 0%, 100%, 0.25);
 }
 .button .button-text {
   font-size: 2rem;
@@ -203,6 +204,9 @@ body {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+.pagination-container .pagination-item:hover {
+  background-color: hsla(0, 0%, 100%, 0.397);
+}
 .pagination-container .pagination-item.active-paginate {
   background-color: hsl(0, 0%, 100%);
   color: hsl(230, 35%, 7%) !important; /* Ensure styles are applied */
@@ -225,6 +229,9 @@ body {
   background-color: hsla(0, 0%, 100%, 0.17);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+}
+.small-pagination .small-pagination-list .small-pagination-item:hover {
+  background-color: hsla(0, 0%, 100%, 0.397);
 }
 
 .small-pagination-active {
@@ -257,6 +264,16 @@ body {
   font-size: 1rem;
   color: hsl(0, 0%, 100%);
   cursor: pointer;
+}
+.destination-list .destination-item:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background-color: hsla(0, 0%, 100%, 0.397);
+  transition: all 0.3s ease-in-out;
 }
 
 .destination-item-active::after {
@@ -372,6 +389,7 @@ body {
 .home .home-description {
   display: flex;
   flex-direction: column;
+  z-index: 2;
   width: 540px;
 }
 .home .home-description .home-text {
