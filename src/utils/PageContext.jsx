@@ -10,7 +10,7 @@ export function usePageContext() {
 
 // eslint-disable-next-line react/prop-types
 export default function PageContext({ children }) {
-  const { data, errors, loading } = useFetchData('../../public/data.json');
+  const { data, errors, loading } = useFetchData('../../data/data.json');
 
   // Ensure data is available before rendering the children
   const destinations = data.destinations || [];
