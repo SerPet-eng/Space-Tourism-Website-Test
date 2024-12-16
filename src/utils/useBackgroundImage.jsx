@@ -87,8 +87,8 @@ export default function useBackgroundImage() {
   };
 
   const getImageBackground = () => {
-    const basePath = location.pathname.split('/')[1];
-    if (basePath === '') return backgroundMap['/'];
+    const basePath = location.pathname.split('/')[1]; // Get the first segment of the path
+    if (basePath === '') return backgroundMap['/']; // Home page
     if (backgroundMap[`/${basePath}`]) return backgroundMap[`/${basePath}`];
 
     switch (location.pathname) {
