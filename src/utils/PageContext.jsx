@@ -12,20 +12,12 @@ export function usePageContext() {
 export default function PageContext({ children }) {
   const { data, errors, loading } = useFetchData('../../data/data.json');
 
-  // Ensure data is available before rendering the children
   const destinations = data.destinations || [];
   const crew = data.crew || [];
-  const technology = data.technology || []; // If data is still loading, return a loading indicator
-
-  // if (destinations.length > 0 && crew.length > 0 && technology.length > 0) {
-  //   console.log('Its Working');
-  // } else {
-  //   console.log('Loading...');
-  // }
-
+  const technology = data.technology || [];
   if (loading) {
     return <div>Loading...</div>;
-  } // If there's an error, display it
+  }
   if (errors) {
     return <div>Error: {errors.message}</div>;
   }
