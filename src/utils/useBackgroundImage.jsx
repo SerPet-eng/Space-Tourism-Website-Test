@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 
 import HomeBackgroundDesktop from '../../assets/home/background-home-desktop.jpg';
@@ -26,35 +27,47 @@ export default function useBackgroundImage() {
     currentTechnologyImage: TechnologyBackgroundDesktop,
   });
 
+  const screenWidths = [
+    {
+      maxWidth: 650,
+      images: {
+        currentHomeImage: HomeBackgroundMobile,
+        currentDestinationImage: DestinationBackgroundMobile,
+        currentCrewImage: CrewBackgroundMobile,
+        currentTechnologyImage: TechnologyBackgroundMobile,
+      },
+    },
+    {
+      maxWidth: 1060,
+      images: {
+        currentHomeImage: HomeBackgroundTablet,
+        currentDestinationImage: DestinationBackgroundTablet,
+        currentCrewImage: CrewBackgroundTablet,
+        currentTechnologyImage: TechnologyBackgroundTablet,
+      },
+    },
+    {
+      maxWidth: Infinity,
+      images: {
+        currentHomeImage: HomeBackgroundDesktop,
+        currentDestinationImage: DestinationBackgroundDesktop,
+        currentCrewImage: CrewBackgroundDesktop,
+        currentTechnologyImage: TechnologyBackgroundDesktop,
+      },
+    },
+  ];
+
   useEffect(() => {
     const updateWidth = () => {
       const screenWidth = window.innerWidth;
 
-      if (screenWidth <= 650) {
-        setCurrentImage((prevCurrentImage) => ({
-          ...prevCurrentImage,
-          currentHomeImage: HomeBackgroundMobile,
-          currentDestinationImage: DestinationBackgroundMobile,
-          currentCrewImage: CrewBackgroundMobile,
-          currentTechnologyImage: TechnologyBackgroundMobile,
-        }));
-      } else if (screenWidth <= 1060) {
-        setCurrentImage((prevCurrentImage) => ({
-          ...prevCurrentImage,
-          currentHomeImage: HomeBackgroundTablet,
-          currentDestinationImage: DestinationBackgroundTablet,
-          currentCrewImage: CrewBackgroundTablet,
-          currentTechnologyImage: TechnologyBackgroundTablet,
-        }));
-      } else {
-        setCurrentImage((prevCurrentImage) => ({
-          ...prevCurrentImage,
-          currentHomeImage: HomeBackgroundDesktop,
-          currentDestinationImage: DestinationBackgroundDesktop,
-          currentCrewImage: CrewBackgroundDesktop,
-          currentTechnologyImage: TechnologyBackgroundDesktop,
-        }));
-      }
+      const { images } = screenWidths.find(
+        ({ maxWidth }) => screenWidth <= maxWidth,
+      );
+      setCurrentImage((prevImage) => ({
+        ...prevImage,
+        ...images,
+      }));
     };
 
     updateWidth();
