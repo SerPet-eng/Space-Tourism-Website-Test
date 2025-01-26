@@ -1,7 +1,7 @@
 import { usePageContext } from '../utils/PageContext';
 import Crew from '../components/Crew/Crew';
 import LoadingState from '../components/LoadingState';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 export default function CrewRoutes() {
   const { crew, loading } = usePageContext();

@@ -1,7 +1,7 @@
 import { usePageContext } from '../utils/PageContext';
 import Technology from '../components/Technology/Technology';
 import LoadingState from '../components/LoadingState';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 export default function TechnologyRoutes() {
   const { technology, loading } = usePageContext();

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router';
 
 export default function DestinationTab() {
   const [activeIndex, setActiveIndex] = useState(0);

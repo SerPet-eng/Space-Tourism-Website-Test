@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Logo from '../../assets/icons/logo.svg';
 import IconHamburger from '../../assets/icons/icon-hamburger.svg';
 import IconClose from '../../assets/icons/icon-close.svg';

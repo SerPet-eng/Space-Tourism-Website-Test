@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
 
 import HomeBackgroundDesktop from '../../assets/home/background-home-desktop.jpg';
 import HomeBackgroundTablet from '../../assets/home/background-home-tablet.jpg';
@@ -16,7 +17,6 @@ import CrewBackgroundMobile from '../../assets/crew/backgrounds/background-crew-
 import TechnologyBackgroundDesktop from '../../assets/technology/backgrounds/background-technology-desktop.jpg';
 import TechnologyBackgroundTablet from '../../assets/technology/backgrounds/background-technology-tablet.jpg';
 import TechnologyBackgroundMobile from '../../assets/technology/backgrounds/background-technology-mobile.jpg';
-import { useLocation } from 'react-router-dom';
 
 export default function useBackgroundImage() {
   const location = useLocation();

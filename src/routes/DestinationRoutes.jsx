@@ -1,11 +1,13 @@
 import { usePageContext } from '../utils/PageContext';
 import Destination from '../components/Destination/Destination';
 import LoadingState from '../components/LoadingState';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 export default function DestinationRoutes() {
   const { destinations, loading } = usePageContext();
   const { id } = useParams();
+
+  console.log(destinations);
 
   const destinationIndex = destinations.findIndex((destination) => {
     const destinationId = destination.name.toLowerCase();
