@@ -1,0 +1,39 @@
+@import './reset';
+@import './app';
+@import './nav';
+@import './styles/buttons';
+@import './styles/pagination';
+@import './styles/small_paginations';
+@import './styles/destination_page_link';
+@import './styles/Technology/technology';
+
+// MAIN STYLES
+@import './styles/Home/home';
+@import './styles/Destination/destination';
+@import './styles/Crew/crew';
+
+// MEDIA QUERIES
+@import './media_queries/nav_queries';
+@import './media_queries/button_queries';
+@import './media_queries/pagination_queries';
+@import './media_queries/small_pagination_queries';
+@import './media_queries/destination_tab_queries';
+@import './media_queries/destination/destination_queries';
+@import './media_queries/crew/crew_queries';
+@import './media_queries/technology/technology_queries';
+
+@import './media_queries/home/home_queries';
+
+// ERROR
+@import './styles/Error/not_found';
+
+// ERROR MEDIA QUERIES
+@import './media_queries/error/not_found_queries';
+
+// LOADING STATE
+@import './styles/loading_state';
+
+.pagination {
+  background-color: red;
+  color: white;
+}

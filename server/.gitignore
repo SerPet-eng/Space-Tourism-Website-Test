@@ -1,0 +1,32 @@
+# Node.js
+node_modules/
+npm-debug.log
+
+# Environment files
+.env
+.env.local
+
+# Build directories
+dist/
+build/
+
+# IDE files
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Coverage
+coverage/

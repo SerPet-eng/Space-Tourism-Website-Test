@@ -1,0 +1,787 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.app {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: hsl(230, 35%, 7%);
+}
+
+@keyframes slide-In {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.nav {
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 2rem;
+  font-family: "Barlow", sans-serif;
+}
+.nav .nav-hero {
+  display: flex;
+  align-items: center;
+  width: 55%;
+  position: relative;
+  z-index: 99;
+}
+.nav .nav-hero .nav-line {
+  display: block;
+  margin-left: 5rem;
+  background-color: hsl(0, 0%, 100%);
+  height: 1px;
+  width: 100%;
+}
+.nav .nav-hero .nav-hamburger {
+  display: none;
+}
+.nav .nav-menu {
+  background-color: hsla(0, 0%, 100%, 0.212);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  list-style: none;
+  padding: 2rem;
+  min-width: 50%; /* Adjust as needed for your design */
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+.nav .nav-menu .nav-item {
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.nav .nav-menu .nav-item .nav-item-text {
+  color: white;
+  font-size: 16px;
+}
+.nav .nav-menu .nav-menu-close {
+  display: none;
+}
+.nav .open {
+  transform: translateX(0);
+}
+.nav .close {
+  transform: translateX(100%);
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: -33px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: hsl(0, 0%, 100%);
+  animation: slide-In 0.3s ease-in-out forwards;
+}
+
+.button {
+  box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.5), 0 -5px 10px hsla(0, 0%, 0%, 0.5), 5px 0 10px hsla(0, 0%, 0%, 0.5), -5px 0 10px hsla(0, 0%, 0%, 0.5);
+  padding: 8rem 5rem;
+  border: none;
+  border-radius: 50%;
+  color: hsl(230, 35%, 7%);
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+.button:hover {
+  outline: 80px solid hsla(0, 0%, 100%, 0.25);
+}
+.button .button-text {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.pagination-container {
+  height: 304px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+}
+.pagination-container .pagination-item {
+  width: 4.5rem; /* Fixed width for perfect circles */
+  height: 4.5rem; /* Fixed height for perfect circles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(231, 77%, 90%);
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.pagination-container .pagination-item:hover {
+  background-color: hsla(0, 0%, 100%, 0.397);
+}
+.pagination-container .pagination-item.active-paginate {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(230, 35%, 7%) !important; /* Ensure styles are applied */
+}
+
+.small-pagination {
+  margin-top: auto;
+}
+.small-pagination .small-pagination-list {
+  display: flex;
+  justify-content: start;
+  gap: 1.25rem;
+  padding: 0;
+}
+.small-pagination .small-pagination-list .small-pagination-item {
+  width: 0.7rem;
+  height: 0.7rem;
+  list-style-type: none;
+  border-radius: 30px;
+  background-color: hsla(0, 0%, 100%, 0.17);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.small-pagination .small-pagination-list .small-pagination-item:hover {
+  background-color: hsla(0, 0%, 100%, 0.397);
+}
+
+.small-pagination-active {
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: hsl(0, 0%, 100%) !important;
+}
+
+.technology {
+  margin: 1rem 0 1rem 12rem;
+  color: white;
+  min-height: 80vh;
+}
+.technology .pages-title {
+  font-family: "Barlow", serif;
+  font-weight: 300;
+  font-style: normal;
+  text-transform: uppercase;
+  color: white;
+}
+.technology .pages-title span {
+  font-family: "Barlow", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: hsl(230, 35%, 7%);
+  margin-right: 1.5rem;
+}
+.technology .technology-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 556px;
+}
+.technology .technology-content .technology-explanation-container {
+  margin-right: auto;
+  width: 100%;
+  height: 304px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.technology .technology-content .technology-explanation-container .technology-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.technology .technology-content .technology-explanation-container .technology-text .technology-rank-name {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.technology .technology-content .technology-explanation-container .technology-text .technology-rank-name .technology-rank {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.technology .technology-content .technology-explanation-container .technology-text .technology-rank-name .technology-name {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+.technology .technology-content .technology-explanation-container .technology-text .technology-description {
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-style: normal;
+  color: hsl(231, 77%, 90%);
+}
+.technology .technology-content .technology-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 768px;
+  overflow: hidden;
+}
+.technology .technology-content .technology-image-container .technology-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+.technology .technology-content .technology-image-container.placeholder {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.technology .technology-content .technology-image-container.placeholder:before {
+  content: "Loading...";
+  font-size: 1rem;
+  color: #666;
+}
+
+.home {
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 8rem 1rem 8rem;
+  min-height: 80vh;
+}
+.home .home-description {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  width: 540px;
+}
+.home .home-description .home-text {
+  font-family: "Barlow", serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  color: hsl(231, 77%, 90%);
+}
+.home .home-description .home-title {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 9rem;
+}
+.home .home-description .home-paragraph {
+  font-family: "Barlow", serif;
+  font-weight: 300;
+  font-style: normal;
+  color: hsl(231, 77%, 90%);
+  font-size: 1rem;
+}
+
+.destination {
+  display: flex;
+  color: hsl(0, 0%, 100%);
+}
+
+.crew {
+  margin: 1rem 10rem;
+  color: white;
+  min-height: 80vh;
+}
+.crew .pages-title {
+  font-family: "Barlow", serif;
+  font-weight: 300;
+  font-style: normal;
+  text-transform: uppercase;
+  color: white;
+}
+.crew .pages-title span {
+  font-family: "Barlow", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: hsl(230, 35%, 7%);
+  margin-right: 1.5rem;
+}
+.crew .crew-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.crew .crew-content .crew-explanation-container {
+  width: 480px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+.crew .crew-content .crew-explanation-container .crew-text {
+  margin: 5rem auto 5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.crew .crew-content .crew-explanation-container .crew-text .crew-rank {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: hsl(0, 0%, 100%);
+}
+.crew .crew-content .crew-explanation-container .crew-text .crew-name {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: hsl(0, 0%, 100%);
+}
+.crew .crew-content .crew-explanation-container .crew-text .crew-bio {
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 1rem;
+  color: hsl(231, 77%, 90%);
+}
+.crew .crew-content .crew-image-container {
+  width: 480px;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.crew .crew-content .crew-image-container .crew-image {
+  width: 70%;
+  margin: 0 auto;
+}
+.crew .crew-content .crew-image-container.placeholder {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.crew .crew-content .crew-image-container.placeholder::before {
+  font-family: "Barlow", serif;
+  font-weight: 300;
+  font-style: normal;
+  content: "Loading...";
+  font-size: 1rem;
+  color: #666;
+}
+
+@media only screen and (max-width: 1060px) {
+  .nav .nav-hero {
+    width: 10%;
+  }
+  .nav .nav-hero .nav-line {
+    display: none;
+  }
+  .nav .nav-menu {
+    min-width: 85%;
+    justify-content: space-evenly;
+  }
+  .active::after {
+    bottom: -5px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .nav {
+    margin: 1rem;
+  }
+  .nav .nav-hero {
+    width: 100%;
+  }
+  .nav .nav-hero .nav-hamburger {
+    display: block;
+    margin-left: auto;
+  }
+  .nav .nav-menu {
+    min-width: 65%;
+    gap: 1rem;
+    min-height: 100%;
+    align-items: start;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    z-index: 99;
+  }
+  .nav .nav-menu .nav-item {
+    width: 100%;
+  }
+  .nav .nav-menu .nav-menu-close {
+    display: block;
+    margin-left: auto;
+  }
+  .active::after {
+    left: 100%;
+    bottom: 0;
+    height: 25px;
+    width: 3px;
+    animation: none;
+  }
+  .hide {
+    display: none;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .button {
+    padding: 3.5rem 2rem;
+  }
+  .button .button-text {
+    font-size: 1.125rem;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .pagination-container {
+    flex-direction: row;
+    height: auto;
+  }
+  .pagination-container .pagination-item {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .pagination-container .pagination-item {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .small-pagination {
+    margin-top: 0;
+  }
+  .small-pagination .small-pagination-list .small-pagination-item {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: hsla(0, 0%, 100%, 0.17);
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .destination-list .destination-item {
+    font-size: 0.875rem;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .destination .destination-content {
+    flex-direction: column;
+  }
+  .destination .destination-content .destination-image-container .destination-image {
+    width: 70%;
+  }
+  .destination .destination-content .destination-explanation-container {
+    text-align: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .destination {
+    padding: 2rem;
+    margin: auto;
+    text-align: center;
+  }
+  .destination .destination-content {
+    flex-direction: column;
+  }
+  .destination .destination-content .destination-image-container {
+    margin: 1.5rem auto;
+    width: auto;
+    height: auto;
+  }
+  .destination .destination-content .destination-image-container .destination-image {
+    width: 50%;
+  }
+  .destination .destination-content .destination-explanation-container {
+    width: auto;
+    height: auto;
+  }
+  .destination .destination-content .destination-explanation-container .destination-text .destination-name {
+    font-size: 3.5rem;
+  }
+  .destination .destination-content .destination-explanation-container .destination-text .destination-description {
+    font-size: 0.9rem;
+  }
+  .destination .destination-content .destination-explanation-container .destination-statistics {
+    flex-direction: column;
+  }
+  .destination .destination-content .destination-explanation-container .destination-statistics .destination-info .destination-info-title {
+    font-size: 0.8rem;
+  }
+  .destination .destination-content .destination-explanation-container .destination-statistics .destination-info .destination-info-hero {
+    font-size: 1.75rem;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .crew .crew-content {
+    flex-direction: column;
+  }
+  .crew .crew-content .crew-explanation-container {
+    text-align: center;
+    align-items: center;
+  }
+  .crew .crew-content .crew-explanation-container {
+    width: 480px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .crew {
+    padding: 2rem;
+    margin: auto;
+    text-align: center;
+  }
+  .crew .crew-content .crew-explanation-container {
+    width: auto;
+    height: auto;
+  }
+  .crew .crew-content .crew-explanation-container .crew-text {
+    margin: 2rem auto;
+    gap: 0.5rem;
+  }
+  .crew .crew-content .crew-explanation-container .crew-text .crew-rank {
+    font-size: 1.125rem;
+  }
+  .crew .crew-content .crew-explanation-container .crew-text .crew-name {
+    font-size: 1.5rem;
+  }
+  .crew .crew-content .crew-explanation-container .crew-text .crew-bio {
+    font-size: 0.9rem;
+  }
+  .crew .crew-content .crew-image-container {
+    width: auto;
+    height: auto;
+  }
+  .crew .crew-content .crew-image-container .crew-image {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .technology {
+    margin: auto;
+  }
+  .technology .technology-content {
+    justify-content: center;
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .technology .technology-content .technology-explanation-container {
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    margin: auto 2.5rem;
+  }
+  .technology .technology-content .technology-explanation-container .technology-text .technology-rank-name .technology-rank {
+    font-size: 1.5rem;
+  }
+  .technology .technology-content .technology-explanation-container .technology-text .technology-rank-name .technology-name {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .technology .technology-content .technology-explanation-container {
+    gap: 2.5rem;
+  }
+  .technology .technology-content .technology-explanation-container .technology-text .technology-rank-name .technology-rank {
+    font-size: 1.125rem;
+  }
+  .technology .technology-content .technology-explanation-container .technology-text .technology-rank-name .technology-name {
+    font-size: 1.5rem;
+  }
+  .technology .technology-content .technology-image-container .technology-image {
+    width: 768px;
+    height: 258px;
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .home {
+    flex-direction: column;
+    margin: 8rem 2.5rem;
+    gap: 4.125rem;
+  }
+  .home .home-description {
+    text-align: center;
+    align-items: center;
+  }
+  .home .home-description .home-paragraph {
+    line-height: 1.5rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .home {
+    margin: 1.5rem;
+  }
+  .home .home-description {
+    width: 327px;
+  }
+  .home .home-description .home-text {
+    font-size: 1rem;
+  }
+  .home .home-description .home-title {
+    font-size: 5rem;
+  }
+  .home .home-description .home-paragraph {
+    font-size: 0.9rem;
+  }
+}
+.not-found {
+  margin: 0 10rem 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+.not-found .not-found-hero .not-found-title {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10rem;
+  line-height: 8rem;
+}
+.not-found .not-found-hero .not-found-text {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.not-found .not-found-content .not-found-description {
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-style: normal;
+  color: hsl(231, 77%, 90%);
+  font-size: 1.25rem;
+}
+.not-found .not-found-content .not-found-direction {
+  margin-top: 0.5rem;
+  font-family: "Barlow", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 650px) {
+  .not-found {
+    margin: auto;
+  }
+}
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  text-align: center;
+  color: white;
+}
+.loading-state .loading-state-text {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.pagination {
+  background-color: red;
+  color: white;
+}/*# sourceMappingURL=style.css.map */
